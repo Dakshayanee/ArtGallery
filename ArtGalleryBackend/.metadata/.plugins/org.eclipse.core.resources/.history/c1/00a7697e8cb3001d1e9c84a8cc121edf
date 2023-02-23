@@ -1,0 +1,23 @@
+package com.app.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+
+@Table(name="customers")
+public class Customer {
+	
+
+	@Coloumn(name="")
+	private String firstName;
+	private String lastName;
+	private String custEmail;
+	private String custAddress;
+	private String custMobileNo;
+	
+	
+	
+	
+
+}

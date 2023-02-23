@@ -1,0 +1,16 @@
+package com.app.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="customers")
+public class Customer {
+	private int cust_id;
+	private String cust_name;
+	private String cust_email;
+	private String cust_address;
+	private String cust_mobileNo;
+	
+
+}

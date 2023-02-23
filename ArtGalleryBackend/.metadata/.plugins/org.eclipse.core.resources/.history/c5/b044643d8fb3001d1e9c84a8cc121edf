@@ -1,0 +1,9 @@
+package com.app.entities;
+
+public class Product {
+	
+private String productName;
+private String Description;
+private double price;
+private boolean inStock;
+}
