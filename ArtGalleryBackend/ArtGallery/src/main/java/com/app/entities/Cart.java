@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,5 +28,6 @@ public class Cart extends BaseEntity {
 	@OneToMany(mappedBy="shoppingCart",cascade=CascadeType.ALL,orphanRemoval=true)
     private List<CartItem> cartItems=new ArrayList<>();
 	
-
+	@OneToOne(mappedBy = "product",cascade = CascadeType.ALL,orphanRemoval=true)
+	private List<CartProduct> cartProducts=new ArrayList<>();
 }
