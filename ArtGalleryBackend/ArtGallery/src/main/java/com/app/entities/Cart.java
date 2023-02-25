@@ -7,7 +7,9 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,5 +29,9 @@ public class Cart extends BaseEntity {
 	@OneToMany(mappedBy="shoppingCart",cascade=CascadeType.ALL,orphanRemoval=true)
     private List<CartItem> cartItems=new ArrayList<>();
 	
+	//cart:one,owning,child
+	@OneToOne  //def fetch type:EAGER
+	@JoinColumn(name="customer_id",nullable=false)
+	private User usercart;
 
 }
