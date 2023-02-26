@@ -29,14 +29,13 @@ public class Cart extends BaseEntity {
 	@OneToMany(mappedBy="shoppingCart",cascade=CascadeType.ALL,orphanRemoval=true)
     private List<CartItem> cartItems=new ArrayList<>();
 	
-<<<<<<< HEAD
+
 	//cart:one,owning,child
 	@OneToOne  //def fetch type:EAGER
 	@JoinColumn(name="customer_id",nullable=false)
 	private User usercart;
 
-=======
-	@OneToOne(mappedBy = "product",cascade = CascadeType.ALL,orphanRemoval=true)
-	private List<CartProduct> cartProducts=new ArrayList<>();
->>>>>>> c527ea2e14e4133157e54c08beae5c78bee36fd8
+
+	
+
 }
