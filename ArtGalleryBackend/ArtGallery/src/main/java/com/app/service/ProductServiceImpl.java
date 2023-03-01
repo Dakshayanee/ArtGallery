@@ -18,14 +18,20 @@ public class ProductServiceImpl implements ProductService  {
 	private ProductRepository prodrepo;
 	
 	@Override
-	public List<Product> getAllProducts() {
+	public List<Product> getAllProductsByCategory(Long id) {
 		
-		return prodrepo.findAll();
+		return prodrepo.getAllProductsByCategory(id);
 	}
 	@Override
 	public Product addproduct(Product prod) {
 		
 		return prodrepo.save(prod);
+	}
+	@Override
+	public String deleteProduct(Long id) {
+		String productName=prodrepo.findById(id).get().getProductName();
+		prodrepo.deleteById(id);
+		return productName +"Deleted successfully" ;
 	}
 	
          

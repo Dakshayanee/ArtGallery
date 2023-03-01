@@ -32,8 +32,8 @@ public class Cart extends BaseEntity {
 
 	//cart:one,owning,child
 	@OneToOne  //def fetch type:EAGER
-	@JoinColumn(name="customer_id",nullable=false)
-	private User usercart;
+	//@JoinColumn(name="customer_id",nullable=false)
+	private Customer customercart;
 
 
 	
