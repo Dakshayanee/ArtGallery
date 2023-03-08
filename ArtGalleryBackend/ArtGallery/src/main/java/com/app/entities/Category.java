@@ -6,9 +6,12 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -20,8 +23,14 @@ public class Category extends BaseEntity {
 	
     @Column(name="category_name",length=20,unique=true)
 	private String CategoryName;
+    
 	@Column(name="description",length=500)
 	private String CategoryDescription;
+	
+	@Column(length = 30)
+	@Enumerated(EnumType.STRING)
+	private Status status;
+
 	//one-to-many category 1---->*product
 	//category :one,parent,inverse
 	@JsonIgnoreProperties("productCategory")
@@ -82,6 +91,12 @@ public class Category extends BaseEntity {
 		products.remove(p);
 		p.setSelectedcategory(null);
 	}
+	
+	// helper method to add product
+		public void addProduct(Product p) {
+			products.add(p);
+			p.setSelectedcategory(this);
+		}
 	
 	@Override
 	public String toString() {

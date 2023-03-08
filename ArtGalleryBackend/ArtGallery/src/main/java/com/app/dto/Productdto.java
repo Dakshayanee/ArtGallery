@@ -6,7 +6,7 @@ import com.app.entities.Product;
 public class Productdto {
 	
 	private Product proddto;
-	private Category catdto;
+	private String catdto;
     private Boolean stock;
     
     
@@ -23,7 +23,7 @@ public class Productdto {
 		return "Productdto [proddto=" + proddto + ", catdto=" + catdto + ", stock=" + stock + "]";
 	}
 
-	public Productdto(Product proddto, Category catdto, Boolean stock) {
+	public Productdto(Product proddto, String catdto, Boolean stock) {
 		super();
 		this.proddto = proddto;
 		this.catdto = catdto;
@@ -32,10 +32,10 @@ public class Productdto {
 	public void setProddto(Product proddto) {
 		this.proddto = proddto;
 	}
-	public Category getCatdto() {
+	public String getCatdto() {
 		return catdto;
 	}
-	public void setCatdto(Category catdto) {
+	public void setCatdto(String catdto) {
 		this.catdto = catdto;
 	}
 	public Boolean getStock() {
