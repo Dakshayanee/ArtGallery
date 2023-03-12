@@ -22,8 +22,8 @@ const SignInScreen = (props) => {
       sessionStorage.setItem("Authorization", "Bearer " + response.token);
       if (response.data.role === "ADMIN") {       // role based login
         props.history.push("/admin-home");
-      } else if (response.data.role === "EMPLOYEE") {
-        props.history.push("/employee-home");
+      } else if (response.data.role === "ARTIST") {
+        props.history.push("/artist-home");
       } else if (response.data.role === "CUSTOMER") {
         props.history.push("/customer-home");
       } else if (response.data.role === "DELIVERY_PERSON") {

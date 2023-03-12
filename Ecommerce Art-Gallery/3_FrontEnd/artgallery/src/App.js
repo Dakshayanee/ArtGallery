@@ -6,13 +6,13 @@ import SignInScreen from "./Screens/User/SignInScreen";
 import Navigation from "./Components/Navigation";
 import ContactUsScreen from "./Screens/Home/ContactUsScreen";
 import AdminHomeScreen from "./Screens/Admin/AdminHomeScreen";
-import EmployeeHomeScreen from "./Screens/Employee/EmployeeHomeScreen";
+import ArtistHomeScreen from "./Screens/Artist/ArtistHomeScreen";
 import DeliveryHomeScreen from "./Screens/Delivery/DeliveryHomeScreen";
 import CustomerHomeScreen from "./Screens/Customer/CustomerHomeScreen";
 import SignUpScreen from "./Screens/User/SignUpScreen";
 import EditProfileScreen from "./Screens/User/EditProfileScreen";
-import AdminViewEmployeeScreen from "./Screens/Admin/AdminViewEmployeeScreen";
-import AdminDeleteEmployeeScreen from "./Screens/Admin/AdminDeleteEmployeeScreen";
+import AdminViewArtistScreen from "./Screens/Admin/AdminViewArtistScreen";
+import AdminDeleteArtistScreen from "./Screens/Admin/AdminDeleteArtistScreen";
 import AddCategoryScreen from "./Screens/Common/AddCategoryScreen";
 import ViewAllCategoriesScreen from "./Screens/Common/ViewAllCategoriesScreen";
 import AddProductScreen from "./Screens/Common/AddProductScreen";
@@ -53,9 +53,9 @@ function App() {
             <Route path="/edit-profile" component={EditProfileScreen} />
             
             <Route path="/admin-home" component={AdminHomeScreen} />
-            <Route path="/add-employee" component={SignUpScreen} />
-            <Route path="/employees" component={AdminViewEmployeeScreen}/>           
-            <Route path="/delete-employee" component={AdminDeleteEmployeeScreen}/>  
+            <Route path="/add-artist" component={SignUpScreen} />
+            <Route path="/artists" component={AdminViewArtistScreen}/>           
+            <Route path="/delete-artist" component={AdminDeleteArtistScreen}/>  
             <Route path="/stock" component={AdminStockReportScreen}/>  
             
             <Route path="/add-category" component={AddCategoryScreen}/>  
@@ -64,7 +64,7 @@ function App() {
             <Route path="/products" component={ViewProductsScreen}/>
             <Route path="/edit-product" component={EditProductScreen}/>  
 
-            <Route path="/employee-home" component={EmployeeHomeScreen}/>
+            <Route path="artist-home" component={ArtistHomeScreen}/>
             <Route path="/orders" component={ViewAllOrdersScreen}/>
             <Route path="/assigned-orders" component={ViewAssignedOrdersScreen}/>
 

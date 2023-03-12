@@ -50,16 +50,16 @@ const Navigation = (props) => {
                   <Link className="nav-link" to="/edit-profile">Profile</Link>
                 </li>
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Employees</a>
+                  <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Artist</a>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li>
-                      <Link className="dropdown-item" to="/employees"> View Artists</Link>
+                      <Link className="dropdown-item" to="/artists"> View Artists</Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/add-employee">Add Artist</Link>
+                      <Link className="dropdown-item" to="/add-artist">Add Artist</Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/delete-employee">Remove Artist</Link>
+                      <Link className="dropdown-item" to="/delete-artist">Remove Artist</Link>
                     </li>
                   </ul>
                 </li>
@@ -96,11 +96,11 @@ const Navigation = (props) => {
             )
           }
           {   
-                userSignIn.response && userSignIn.response.data.role==="EMPLOYEE" &&     
+                userSignIn.response && userSignIn.response.data.role==="ARTIST" &&     
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active" to="/employee-home">Home</Link>
+                            <Link className="nav-link active" to="/artist-home">Home</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/edit-profile">Profile </Link>

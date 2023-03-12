@@ -43,14 +43,14 @@ const SignUpScreen = (props) => {
         else
             setPasswordError("")
 
-        if(firstName.length>1 && password.length>1 && email.match("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$") && ((role==="CUSTOMER" && !userSignIn.response) || role==="EMPLOYEE" || role==="DELIVERY_PERSON"))
+        if(firstName.length>1 && password.length>1 && email.match("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$") && ((role==="CUSTOMER" && !userSignIn.response) || role==="ARTIST" || role==="DELIVERY_PERSON"))
             dispatch(signup(firstName,lastName,email,password,role))
     }
 
     useEffect(()=>{
             if(response && response.status === "success"){
                 if(userSignIn.response && userSignIn.response.data.role ==="ADMIN")
-                    props.history.push("/employees")
+                    props.history.push("/artists")
                 else
                     props.history.push("/signin")
                     dispatch({
@@ -104,7 +104,7 @@ const SignUpScreen = (props) => {
                                     <h5 className="form-label">Role</h5>
                                     <select className="form-select" onChange={(e)=>{setRole(e.target.value.toUpperCase())}}>
                                         <option disabled selected>-- Select </option>
-                                        <option >Employee</option>
+                                        <option >Artist</option>
                                         <option >Delivery_person</option>
                                     </select>
                                     <h6 className="text-danger text-center">{roleError}</h6>
